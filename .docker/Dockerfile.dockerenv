@@ -13,3 +13,5 @@ RUN useradd -s /bin/bash -m developer && \
     usermod -aG sudo developer
 
 USER developer
+
+RUN cargo install --git https://github.com/foundry-rs/foundry foundry-cli anvil --bins --locked
