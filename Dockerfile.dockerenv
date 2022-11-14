@@ -14,4 +14,7 @@ RUN useradd -s /bin/bash -m developer && \
 
 USER developer
 
-RUN cargo install --git https://github.com/foundry-rs/foundry foundry-cli anvil --bins --locked
+RUN curl -L https://foundry.paradigm.xyz | bash
+
+SHELL ["/bin/bash", "--login", "-i", "-c"]
+RUN foundryup
